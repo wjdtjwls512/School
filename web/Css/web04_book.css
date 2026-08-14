@@ -1,0 +1,188 @@
+@font-face {
+  font-family: "YeogiOttaeJalnan";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff")
+    format("woff");
+  font-weight: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "BinggreIi";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Binggrae-Bold.woff")
+    format("woff");
+  font-weight: 700;
+  font-display: swap;
+}
+
+h1 {
+  font-family: "YeogiOttaeJalnan";
+}
+
+#head {
+  background-color: rgb(255, 249, 231);
+  text-align: center;
+  padding: 10px;
+}
+
+.section {
+  border: 1px solid black;
+  width: 300px;
+  /* width: 60%; */
+  height: 400px;
+  padding: 20px;
+  box-sizing: content-box;
+  border-radius: 20px;
+  box-shadow: 2px 2px 3px 3px grey inset;
+  margin: 30px;
+  /* float: left; */
+  display: inline-block;
+  vertical-align: top;
+}
+
+/* .image{
+    width: 200px;
+    height: 200px;
+    /*border: 10px grey;
+    border-style: groove solid dashed double;*/
+/* border: 2px solid grey;
+    border-top-style: dashed;
+    border-color: red orange green blue;
+} */
+
+.image {
+  width: 200px;
+  height: 200px;
+  /*border: 10px grey;
+    border-style: groove solid dashed double;*/
+  border: 1px solid grey;
+  /* border-top-style: dashed; */
+  /* border-color: red green; */
+  /* border-bottom-color: red; */
+  /* border-width: 5px 10px 15px 20px; */
+  /* border-top-left-radius: 30px;
+    border-bottom-right-radius: 30px; */
+  border-radius: 50%;
+  margin: auto;
+  background-color: orange;
+  padding: 10px;
+}
+
+#cleancode {
+  /* margin: 10px 20px; */
+  background: linear-gradient(
+    to left,
+    #f6b365,
+    white 20%,
+    red 40%,
+    blue 60%,
+    green 80%,
+    #fda085
+  );
+  /* float: left */
+}
+
+#namiya {
+  /* margin: 10px 20px 30px; */
+  background: linear-gradient(to right bottom, #e9defa, #fbfcdb);
+  /* float: right; */
+}
+
+#kite {
+  /* margin: 10px 20px 30px 40px; */
+  background: linear-gradient(60deg, #64b3f4, #c2e59c);
+  /* clear: left; */
+}
+
+.book-title {
+  background-color: rgb(255, 235, 120);
+  padding: 5px;
+  border-radius: 15px;
+  font-family: "BinggreIi";
+  font-size: 20px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.book_dd {
+  font-size: 15px;
+}
+
+#cleancode_img {
+  /* background-clip: border-box; */
+  background: url(../images/cleancode.jpg) no-repeat;
+  background-size: cover;
+  /* background-origin: border-box; */
+}
+
+#namiya_img {
+  /* background-clip: padding-box; */
+  background: url(../images/namiya.jpg) no-repeat;
+  background-size: cover;
+  /* background-origin: padding-box; */
+}
+
+#kite_img {
+  /* background-clip: content-box; */
+  background: url(../images/thekiterunner.jpg) no-repeat;
+  background-size: cover;
+  /* background-origin: content-box; */
+}
+
+#main {
+  /* background-image: url("../images/cleancode.jpg");
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-position: 30% 20%;
+    background-attachment: fixed;
+    background: url(../images/cleancode.jpg) no-repeat 10% 50% fixed;
+    background-size: 50% 50%; */
+  text-align: center;
+}
+
+#grad_test {
+  background: radial-gradient(circle at 30% 30%, white, blue);
+  height: 300px;
+  border-radius: 50%;
+}
+
+#nav ul {
+  list-style-type: none;
+  text-align: center;
+  padding: 0px;
+}
+
+#nav ul li {
+  display: inline-block;
+  border: 1px solid black;
+  width: 200px;
+  /* height: 40px; */
+  text-align: center;
+  font-size: 18px;
+  margin: 0px 10px;
+  /* padding: 10px; */
+}
+
+#nav a {
+  display: block;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+#nav a:link {
+  text-decoration: none;
+  color: black;
+}
+
+#nav a:visited {
+  text-decoration: none;
+  color: black;
+}
+
+#nav a:hover {
+  background-color: black;
+  color: white;
+}
+
+#nav a:active {
+  background-color: rgb(124, 17, 232);
+}

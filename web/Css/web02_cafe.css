@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css2?family=Single+Day&display=swap");
+
+.single-day-regular {
+  font-family: "Single Day", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+h1,
+h2 {
+  color: rgb(97, 60, 12);
+}
+
+th {
+  border-bottom: 2px solid brown;
+  background-color: blanchedalmond;
+}
+
+tfoot {
+  background-color: ivory;
+  font-size: small;
+}
+
+td {
+  border-bottom: 1px solid brown;
+  font-size: 0.8em;
+}
+
+/* table{
+    width: 300px;
+    height: 250px;
+}*/
+
+th,
+td {
+  width: 100px;
+  height: 30px;
+}
+
+table {
+  caption-side: bottom;
+  text-align: center;
+  border-collapse: collapse;
+  font-size: 18px;
+}
+
+.t_right {
+  text-align: right;
+}
+
+.t_center {
+  text-align: center;
+  width: 630px;
+  height: 70px;
+  background-color: rgb(97, 60, 12);
+  color: white;
+  line-height: 70px;
+  text-transform: lowercase;
+  letter-spacing: 10px;
+}
+
+.t_cap {
+  text-align: right;
+  font-size: 12px;
+  font-style: italic;
+}
+
+p {
+  font-size: 0.8em;
+}
+
+.t_bold {
+  font-weight: bold;
+}
+
+h2 {
+  text-decoration: underline;
+}
+
+h1 {
+  text-shadow: 2px 2px 2px burlywood;
+}
+
+#order_name {
+  color: white;
+  background-color: orange;
+  text-decoration: none;
+  width: 430px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+}
+
+fieldset {
+  width: 400px;
+  line-height: 2;
+  margin-bottom: 20px;
+}
+
+textarea {
+  vertical-align: top;
+  resize: none;
+}
+
+i {
+  vertical-align: middle;
+}
+
+button {
+  width: 130px;
+  height: 50px;
+  margin-right: 20px;
+  font-size: 12px;
+  background-color: rgb(243, 210, 77);
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+[type="range"] {
+  accent-color: #f1a269;
+}

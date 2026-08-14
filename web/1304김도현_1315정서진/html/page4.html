@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="kr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>급식지킴이</title>
+    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/4.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css" />
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/page4.css" />
+    <link rel="icon" type="image/png" href="../images/logo.png" />
+    <style>
+      /* 모바일 모드(768px 이하) 전용 탑 링크 레이아웃 */
+      @media (max-width: 768px) {
+        .mobile_top_links {
+          display: flex;
+          justify-content: center;
+          background-color: #f5f5f5;
+          padding: 12px 0;
+          border-bottom: 1px solid var(--border);
+        }
+        .mobile_top_links ul {
+          display: flex;
+          gap: 25px;
+          list-style: none;
+        }
+        .mobile_top_links ul li a {
+          font-size: 0.95rem;
+          font-weight: bold;
+          color: var(--primary-medium);
+        }
+      }
+      /* PC 모드(769px 이상)에서는 모바일 전용 탑 링크 레이아웃을 완전히 숨김 */
+      @media (min-width: 769px) {
+        .mobile_top_links {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div id="header_flex_box">
+        <div id="header_container">
+          <!--로고 및 사이트 명 / 홈으로 가는 링크-->
+          <h1>
+            <a href="main.html">
+              <div class="logo">
+                <img src="../images/logo.png" alt="로고" />
+                <div>
+                  <p>급식지킴이</p>
+                  <p>급식 잔반 줄이기</p>
+                </div>
+              </div>
+            </a>
+          </h1>
+          <div id="header_info">
+            <nav class="top_nav">
+              <ul>
+                <li><a href="main.html">홈</a></li>
+                <li><a href="page4.html">사이트맵</a></li>
+                <li><a href="#">로그인</a></li>
+                <li><a href="#">회원가입</a></li>
+              </ul>
+            </nav>
+            <!--검색창-->
+            <form action="" id="search_form">
+              <input type="search" id="search_box" placeholder="검색하기" />
+              <button type="submit" id="submit_btn" aria-label="검색 전송"><i class="fi fi-rr-search"></i></button>
+            </form>
+            <button type="button" id="menu_toggle" aria-label="메뉴 토글"><i class="fi fi-rr-menu-burger"></i></button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <nav id="menu_bar"> <!--모바일 모드가 되면-->
+      <div id="menu_container">
+        <div class="mobile_top_links">
+          <ul>
+            <li><a href="main.html">홈</a></li>
+            <li><a href="page4.html">사이트맵</a></li>
+            <li><a href="#">로그인</a></li>
+            <li><a href="#">회원가입</a></li>
+          </ul>
+        </div>
+
+        <ul id="menu"> <!--메뉴-->
+          <li class="menu_item">
+            <a href="#">
+              <div class="menu_li"><p>잔반문제</p></div>
+            </a>
+            <ul class="submenu">
+              <li>
+                <a href="#"
+                  ><div class="submenu_li"><p>경제 문제</p></div></a
+                >
+              </li>
+              <li>
+                <a href="page1.html"
+                  ><div class="submenu_li"><p>환경 문제</p></div></a
+                >
+              </li>
+            </ul>
+          </li>
+          <li class="menu_item">
+            <a href="#">
+              <div class="menu_li"><p>실천방법</p></div>
+            </a>
+            <ul class="submenu">
+              <li>
+                <a href="page2.html"
+                  ><div class="submenu_li"><p>급식판 인증</p></div></a
+                >
+              </li>
+              <li>
+                <a href="#"
+                  ><div class="submenu_li"><p>잔반 제로 챌린지</p></div></a
+                >
+              </li>
+              <li>
+                <a href="#"
+                  ><div class="submenu_li"><p>스탬프 적립</p></div></a
+                >
+              </li>
+            </ul>
+          </li>
+          <li class="menu_item">
+            <a href="#">
+              <div class="menu_li"><p>잔반퀴즈</p></div>
+            </a>
+            <ul class="submenu">
+              <li>
+                <a href="page3.html"
+                  ><div class="submenu_li"><p>급식 O/X 퀴즈</p></div></a
+                >
+              </li>
+              <li>
+                <a href="#"
+                  ><div class="submenu_li"><p>결과</p></div></a
+                >
+              </li>
+            </ul>
+          </li>
+          <li class="menu_item">
+            <a href="#">
+              <div class="menu_li"><p>게시판</p></div>
+            </a>
+            <ul class="submenu">
+              <li>
+                <a href="#"
+                  ><div class="submenu_li"><p>공지사항</p></div></a
+                >
+              </li>
+              <li>
+                <a href="#"
+                  ><div class="submenu_li"><p>자유게시판</p></div></a
+                >
+              </li>
+            </ul>
+          </li>
+          <li class="menu_item">
+            <a href="#">
+              <div class="menu_li"><p>소개</p></div>
+            </a>
+            <ul class="submenu last">
+              <li>
+                <a href="#"
+                  ><div class="submenu_li"><p>사이트 소개</p></div></a
+                >
+              </li>
+              <li>
+                <a href="#"
+                  ><div class="submenu_li"><p>이용안내</p></div></a
+                >
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <main>
+      <div id="main_container">
+        <div id="main_container">
+        <div class="main_info">
+          <p class="main_title">사이트맵</p>
+          <p class="main_explanation">급식 지킴이 웹사이트의 전체 구조를 한눈에 확인할 수 있습니다</p>
+        </div>
+        <div class="list_area">
+          <div class="home_box">
+            <a href="main.html" class="sitemap_main_link">
+              <div class="title_box">
+                <p>홈</p>
+              </div>
+            </a>
+          </div>
+          <div class="list_box">
+            <div class="list_card">
+              <div class="section_list"><p>잔반 문제</p></div>
+              <ul>
+                <li><a href="#">경제 문제</a></li>
+                <li><a href="page1.html">환경 문제</a></li>
+              </ul>
+            </div>
+            <div class="list_card">
+              <div class="section_list"><p>실천 방법</p></div>
+              <ul>
+                <li><a href="page2.html">급식판 인증</a></li>
+                <li><a href="#">잔반 제로 챌린지</a></li>
+                <li><a href="#">스탬프 적립</a></li>
+              </ul>
+            </div>
+            <div class="list_card">
+              <div class="section_list"><p>잔반 퀴즈</p></div>
+              <ul>
+                <li><a href="../html/page3.html">급식 O/X 퀴즈</a></li>
+                <li><a href="#">결과</a></li>
+              </ul>
+            </div>
+            <div class="list_card">
+              <div class="section_list"><p>게시판</p></div>
+              <ul>
+                <li><a href="#">공지사항</a></li>
+                <li><a href="#">자유게시판</a></li>
+              </ul>
+            </div>
+            <div class="list_card">
+              <div class="section_list"><p>소개</p></div>
+              <ul>
+                <li><a href="#">사이트 소개</a></li>
+                <li><a href="#">이용안내</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!--푸터-->
+    <footer>
+      <div id="footer_container">
+        <p id="footer_info_1">ⓒ 2026. 김도현/정서진 All rights reserved.</p>
+        <div id="footer_info_group">
+          <div id="footer_info_2">
+            <a href="#">개인정보방침</a>
+            <a href="#">이용약관</a>
+            <a href="#">문의하기</a>
+          </div>
+          <div id="footer_info_3">
+            <p>연락처 : 010-1234-5678</p>
+            <p>이메일 : foodsave@gmail.com</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="../js/main.js"></script>
+  </body>
+</html>

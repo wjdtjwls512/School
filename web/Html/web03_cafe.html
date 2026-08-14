@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>주문서 작성</title>
+    <link rel="stylesheet" href="/css/web02_cafe.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/uicons-solid-straight/css/uicons-solid-straight.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/4.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css"
+    />
+  </head>
+  <body>
+    <h2 id="order_name"><i class="fi fi-rr-journal-alt"></i>주문서 작성</h2>
+    <form>
+      <fieldset>
+        <legend>주문자 정보</legend>
+        <label for="name">주문자 이름</label>
+        <input
+          id="name"
+          type="text"
+          size="6"
+          maxlength="10"
+          autofocus
+          required
+        /><br />
+        <label for="tel">연락처</label>
+        <input id="tel" type="tel" value="010-" /><br />
+        <label for="email">이메일</label>
+        <input id="email" type="email" placeholder="abc@dgsw.hs.kr" />
+      </fieldset>
+      <fieldset>
+        <legend>수령 방법 및 시간</legend>
+        <label>수령 방식</label>
+        <label><input type="radio" name="receive" value="pick" />픽업</label>
+        <label
+          ><input type="radio" name="receive" value="delivery" />배달</label
+        >
+        <br />
+        <label for="day">픽업 날짜</label>
+        <input id="day" type="date" /><br />
+        <label for="time">픽업 시간</label>
+        <input id="time" type="time" />
+      </fieldset>
+      <fieldset>
+        <legend>메뉴 및 상세 옵션</legend>
+        <label for="menu">주문 메뉴</label>
+        <select id="menu" multiple>
+          <option value="ameri">아메리카노</option>
+          <option value="latte">카페라떼</option>
+          <option value="berry" selected>딸기 스무디</option>
+          <option value="green">녹차 라떼</option>
+        </select>
+        <br />
+        <label>Hot/Cold 선택</label>
+        <label><input type="radio" name="HC" value="Hot" />HOT</label>
+        <label><input type="radio" name="HC" value="Cold" />COLD</label>
+        <br />
+        <label for="ice">얼음의 양</label>
+        <input
+          id="ice"
+          type="range"
+          min="0"
+          max="100"
+          step="5"
+          value="100"
+        /><br />
+        <label>추가 옵션</label>
+        <label
+          ><input type="checkbox" name="add_option" value="shot" />샷
+          추가</label
+        >
+        <label
+          ><input type="checkbox" name="add_option" value="milk" />우유
+          추가</label
+        >
+        <label
+          ><input type="checkbox" name="add_option" value="straw" />빨대
+          추가</label
+        >
+        <br />
+        <label for="num">주문 수량</label>
+        <input id="num" type="number" min="1" max="5" value="1" />
+      </fieldset>
+      <fieldset>
+        <legend>기타 요청 사항</legend>
+        <label for="req">요청 사항</label>
+        <textarea id="req" cols="30" rows="3"></textarea><br />
+        <label for="coupon">쿠폰 코드</label>
+        <input id="coupon" type="search" /><br />
+        <label for="pw">비밀번호(주문 확인용)</label>
+        <input id="pw" type="password" required />
+      </fieldset>
+
+      <!-- <input type="submit" value="주문하기">
+        <input type="reset" value="취소하기"> -->
+
+      <button type="submit">주문하기</button>
+      <button type="reset">취소하기</button>
+
+      <a href="../html/web02_cafe.html">
+        <!-- <input type="button" value="이전 페이지로 돌아가기"> -->
+        <button type="button">이전 페이지로 돌아가기</button>
+      </a>
+      <p>
+        만일 수령한 상품에 문제가 있다면 즉시 반품 신청해주세요<br />
+        반품 신청 시 상품의 상태를 사진으로 첨부해주세요<br />
+        <input type="file" />
+      </p>
+    </form>
+  </body>
+</html>

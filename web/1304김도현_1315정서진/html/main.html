@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="kr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>급식지킴이</title>
+    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/4.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css" />
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="icon" type="image/png" href="../images/logo.png" />
+    <style>
+      /* 모바일 모드(768px 이하) 전용 탑 링크 레이아웃 */
+      @media (max-width: 768px) {
+        .mobile_top_links {
+          display: flex;
+          justify-content: center;
+          background-color: #f5f5f5;
+          padding: 12px 0;
+          border-bottom: 1px solid var(--border);
+        }
+        .mobile_top_links ul {
+          display: flex;
+          gap: 25px;
+          list-style: none;
+        }
+        .mobile_top_links ul li a {
+          font-size: 0.95rem;
+          font-weight: bold;
+          color: var(--primary-medium);
+        }
+      }
+      /* PC 모드(769px 이상)에서는 모바일 전용 탑 링크 레이아웃을 완전히 숨김 */
+      @media (min-width: 769px) {
+        .mobile_top_links {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div id="header_flex_box">
+        <div id="header_container">
+          <!--로고 및 사이트 명 / 홈으로 가는 링크-->
+          <h1>
+            <a href="main.html">
+              <div class="logo">
+                <img src="../images/logo.png" alt="로고" />
+                <div>
+                  <p>급식지킴이</p>
+                  <p>급식 잔반 줄이기</p>
+                </div>
+              </div>
+            </a>
+          </h1>
+          <div id="header_info">
+            <nav class="top_nav">
+              <ul>
+                <li><a href="main.html">홈</a></li>
+                <li><a href="page4.html">사이트맵</a></li>
+                <li><a href="#">로그인</a></li>
+                <li><a href="#">회원가입</a></li>
+              </ul>
+            </nav>
+            <!--검색창-->
+            <form action="" id="search_form"> 
+              <input type="search" id="search_box" placeholder="검색하기" />
+              <button type="submit" id="submit_btn" aria-label="검색 전송"><i class="fi fi-rr-search"></i></button>
+            </form>
+            <button type="button" id="menu_toggle" aria-label="메뉴 토글"><i class="fi fi-rr-menu-burger"></i></button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <nav id="menu_bar">
+      <!--모바일 모드가 되면-->
+      <div id="menu_container">
+        <div class="mobile_top_links">
+          <ul>
+            <li><a href="main.html">홈</a></li>
+            <li><a href="page4.html">사이트맵</a></li>
+            <li><a href="#">로그인</a></li>
+            <li><a href="#">회원가입</a></li>
+          </ul>
+        </div>
+
+        <ul id="menu">
+          <!--메뉴-->
+          <li class="menu_item">
+            <a href="#">
+              <div class="menu_li"><p>잔반문제</p></div>
+            </a>
+            <ul class="submenu">
+              <li>
+                <a href="#"
+                  ><div class="submenu_li"><p>경제 문제</p></div></a
+                >
+              </li>
+              <li>
+                <a href="page1.html"
+                  ><div class="submenu_li"><p>환경 문제</p></div></a
+                >
+              </li>
+            </ul>
+          </li>
+          <li class="menu_item">
+            <a href="#">
+              <div class="menu_li"><p>실천방법</p></div>
+            </a>
+            <ul class="submenu">
+              <li>
+                <a href="page2.html"
+                  ><div class="submenu_li"><p>급식판 인증</p></div></a
+                >
+              </li>
+              <li>
+                <a href="#"
+                  ><div class="submenu_li"><p>잔반 제로 챌린지</p></div></a
+                >
+              </li>
+              <li>
+                <a href="#"
+                  ><div class="submenu_li"><p>스탬프 적립</p></div></a
+                >
+              </li>
+            </ul>
+          </li>
+          <li class="menu_item">
+            <a href="#">
+              <div class="menu_li"><p>잔반퀴즈</p></div>
+            </a>
+            <ul class="submenu">
+              <li>
+                <a href="page3.html"
+                  ><div class="submenu_li"><p>급식 O/X 퀴즈</p></div></a
+                >
+              </li>
+              <li>
+                <a href="#"
+                  ><div class="submenu_li"><p>잔반 처리 퀴즈</p></div></a
+                >
+              </li>
+            </ul>
+          </li>
+          <li class="menu_item">
+            <a href="#">
+              <div class="menu_li"><p>게시판</p></div>
+            </a>
+            <ul class="submenu">
+              <li>
+                <a href="#"
+                  ><div class="submenu_li"><p>공지사항</p></div></a
+                >
+              </li>
+              <li>
+                <a href="#"
+                  ><div class="submenu_li"><p>자유게시판</p></div></a
+                >
+              </li>
+            </ul>
+          </li>
+          <li class="menu_item">
+            <a href="#">
+              <div class="menu_li"><p>소개</p></div>
+            </a>
+            <ul class="submenu last">
+              <li>
+                <a href="#"
+                  ><div class="submenu_li"><p>사이트 소개</p></div></a
+                >
+              </li>
+              <li>
+                <a href="#"
+                  ><div class="submenu_li"><p>이용안내</p></div></a
+                >
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <main>
+      <div id="main_container">
+        <div id="main_banner">
+          <!--메인 화면 상단에 있는 상단 배너-->
+          <div id="banner_text_group">
+            <h2 class="main_banner_title">오늘의 작은 실천이<br />내일의 큰 변화를 만듭니다</h2>
+            <p class="main_banner_p">맛있게 먹고, 남기지 않는 습관으로<br />우리 학교와 지구를 함께 지켜요</p>
+            <a href="page2.html" class="main_banner_btn">잔반 줄이기 실천하기</a>
+          </div>
+          <div id="main_banner_img"></div>
+        </div>
+
+        <div id="card">
+          <!--상단 배너 밑에 있는 카드-->
+          <div class="card">
+            <div class="card_img" id="card_img_1">
+              <img src="../images/pin.png" alt="아이콘" />
+            </div>
+            <h4 class="card_title">잔반문제</h4>
+            <p class="card_p">우리가 남긴 잔반이 일으키는<br />경제적, 환경적 문제를 확인해보세요.</p>
+            <a href="../html/page1.html" class="card_btn">자세히 보기</a>
+          </div>
+          <!--상단 배너 밑에 있는 카드-->
+          <div class="card">
+            <div class="card_img" id="card_img_2">
+              <img src="../images/idea.png" alt="아이콘" />
+            </div>
+            <h4 class="card_title">실천방법</h4>
+            <p class="card_p">급식판 인증 및 다양한 챌린지를<br />통해 잔반 제로를 실천해보세요.</p>
+            <a href="page2.html" class="card_btn">자세히 보기</a>
+          </div>
+          <!--상단 배너 밑에 있는 카드-->
+          <div class="card">
+            <div class="card_img" id="card_img_3">
+              <img src="../images/list.png" alt="아이콘" />
+            </div>
+            <h4 class="card_title">잔반퀴즈</h4>
+            <p class="card_p">쉽고 재미있는 OX 퀴즈를 풀며<br />올바른 잔반 처리 방법을 배워요.</p>
+            <a href="page3.html" class="card_btn">자세히 보기</a>
+          </div>
+        </div>
+        <!--우리학교의 잔반을 얼마나 줄였는지 확인할수 있는 표-->
+        <div id="stats_table_section">
+          <h3>우리 학교 잔반 줄이기 현황</h3>
+          <div class="table_responsive">
+            <table class="stats_table">
+              <thead>
+                <tr>
+                  <th>학년</th>
+                  <th>목표 달성률</th>
+                  <th>남긴 잔반량 (평균)</th>
+                  <th>상태</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1학년</td>
+                  <td>85%</td>
+                  <td>120g</td>
+                  <td class="highlight_text">우수</td>
+                </tr>
+                <tr>
+                  <td>2학년</td>
+                  <td>70%</td>
+                  <td>180g</td>
+                  <td>보통</td>
+                </tr>
+                <tr>
+                  <td>3학년</td>
+                  <td>92%</td>
+                  <td>90g</td>
+                  <td class="highlight_text">최우수</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!--푸터-->
+    <footer>
+      <div id="footer_container">
+        <p id="footer_info_1">ⓒ 2026. 김도현 / 정서진 All rights reserved.</p>
+        <div id="footer_info_group">
+          <div id="footer_info_2">
+            <a href="#">개인정보처리방침</a>
+            <a href="#">이용약관</a>
+          </div>
+          <div id="footer_info_3">
+            <p>연락처 : 010-1234-5678</p>
+            <p>이메일 : foodsave@gmail.com</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+  </body>
+</html>

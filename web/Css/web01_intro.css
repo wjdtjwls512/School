@@ -1,0 +1,24 @@
+body {
+  background-color: #f1fff0;
+}
+* {
+  font-family: fantasy;
+}
+.accent {
+  background-color: rgb(254, 255, 214);
+}
+#introduce {
+  margin-top: 50px;
+  color: blue;
+}
+#introduce {
+  color: red;
+}
+.licence {
+  list-style-type: none;
+  padding-left: 10px;
+}
+#profile {
+  list-style-position: inside;
+  list-style-type: upper-roman;
+}

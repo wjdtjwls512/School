@@ -1,0 +1,66 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+section {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: pink;
+}
+
+.box {
+  width: 500px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  background-color: aqua;
+  transition: transform 1s linear;
+  border-radius: 50%;
+}
+
+.box:hover {
+  transform: rotate(360deg) scale(1.5);
+}
+
+.btn {
+  width: 10%;
+  height: 10%;
+  border: none;
+  border-radius: 50%;
+  transition: transform 1s linear;
+  display: none;
+}
+
+.btn:hover {
+  background-color: bisque;
+  transform: rotate(3600deg) scale(1.5);
+}
+
+.cursor {
+  width: 50px;
+  height: 50px;
+  background-color: #b2ff83; /* 이쁜 초록색 */
+  border-radius: 50%; /* 동그라미로 만들기 */
+  position: fixed; /* 화면에 붕 띄우기 */
+  top: 0;
+  left: 0;
+
+  /* ⚠️ 매우 중요: 가짜 커서가 실제 클릭을 방해하지 못하게 막음 */
+  pointer-events: none;
+
+  /* ⏱️ 아까 배운 transition! 반응 속도를 살짝 늦춰서 쫀득하게 따라오게 만듦 */
+  transition: transform 0s ease-out;
+}
+
+.ht {
+  display: flex;
+}

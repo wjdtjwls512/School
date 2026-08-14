@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../Css/test04_ticket.css" />
+    <title>ticket</title>
+  </head>
+  <body>
+    <div class="header">
+      <a href="./test03_ticket.html">
+      <h1>
+        DGSW TICKET</a> <input type="search" placeholder=" 검색어를 입력하세요" />
+      </h1>
+      <ul>
+        <li><a href="#콘서트">콘서트</a></li>
+        <li><a href="#연극">연극</a></li>
+        <li><a href="#뮤지컬">뮤지컬</a></li>
+        <li><a href="#영화">영화</a></li>
+      </ul>
+    </div>
+    <div class="main">
+      <h2>〈미스트롯4〉 전국투어 콘서트 - 대구</h2>
+      <hr />
+      <div class="section" id="콘서트1">
+        <div class="info">
+        <div class="info_left">
+          <ul>
+            <li>
+              장소 <span>영남대학교 천마아트센터 그랜드홀</span>
+            </li>
+            <li>공연기간 <span>2026.05.16</span></li>
+            <li>공연시간 <span>120분</span></li>
+            <li>관람연령 <span>8세이상 관람가능</span></li>
+          </ul>
+          <form>
+            <fieldset>
+              <legend>가격</legend>
+              <label
+                ><input type="radio" name="price" value="SR" />SR석
+                <span>154,000원</span></label
+              >
+              <label
+                ><input type="radio" name="price" value="R" />R석
+                <span>143,000원</span></label
+              >
+              <label
+                ><input type="radio" name="price" value="S" />S석
+                <span>132,000원</span></label
+              >
+            </fieldset>
+          </div>
+            <div class="info_right">
+            <fieldset>
+              <legend>예매자 정보</legend>
+              <label>이름 <input type="text"></label>
+              <label>휴대폰 번호 <input type="tel"></label>
+              <label>생년월일 <input type="date"></label>
+              <label class="nim">예매 티켓 개수 <input class="num" type="number" min="1" max="100" value="1"></label>
+            </fieldset>
+            <button type="submit">주문하기</button>
+            <button type="reset">취소하기</button>
+            </div>
+        </div>
+          </form>
+      </div>
+    </div>
+  </body>
+</html>

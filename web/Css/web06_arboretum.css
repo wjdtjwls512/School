@@ -1,0 +1,88 @@
+#main_img02 {
+  width: 100%;
+  height: 400px;
+  background-image: url("../images/bg05.jpg");
+  background-size: 100% 100%;
+}
+
+#sub_title {
+  font-size: 50px;
+  color: white;
+  font-weight: bold;
+  line-height: 400px;
+  margin-left: 50px;
+}
+
+h3 {
+  font-size: 40px;
+  text-align: center;
+  margin: 60px 0px;
+}
+
+.ex_list {
+  width: 100%;
+  /* height: 1700px; */
+  border-top: 1px solid gray;
+  display: flex;
+  /* flex-direction: row;
+  flex-wrap: wrap; */
+  flex-flow: row wrap;
+  justify-content: center;
+  /* align-items: stretch;
+  align-content: stretch; */
+  gap: 40px;
+  padding: 40px 0px;
+  line-height: 2;
+}
+
+.box{
+    border: 1px solid black;
+    /* margin: 40px; */
+}
+
+.ex_info{
+  font-size: 18px;
+}
+
+.ex_date{
+  font-size: 0.8rem;
+}
+
+.tag_ing {
+  background-color: #34b586;
+  padding: 5px;
+  color: white;
+  font-weight: bold;
+  border-radius: 50px;
+  /* font-size: 50vw; */
+}
+
+.tag_end {
+  background-color: lightgray;
+  padding: 5px;
+  color: white;
+  font-weight: bold;
+  border-radius: 50px;
+}
+
+.ex_img img{
+    width: 400px;
+    height: 560px;
+}
+
+/* #ex01{
+    align-self: flex-start;
+}
+
+#ex02{
+    margin-right: auto;
+    align-self: center;
+}
+
+#ex03{
+    align-self: flex-end;
+}
+
+#ex04{
+    align-self: stretch;
+} */

@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="kr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>급식지킴이</title>
+    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/4.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css" />
+    <link rel="stylesheet" href="../css/page2.css" />
+    <link rel="icon" type="image/png" href="../images/logo.png" />
+    <style>
+      /* 모바일 모드(768px 이하) 전용 탑 링크 레이아웃 */
+      @media (max-width: 768px) {
+        .mobile_top_links {
+          display: flex;
+          justify-content: center;
+          background-color: #f5f5f5;
+          padding: 12px 0;
+          border-bottom: 1px solid var(--border);
+        }
+        .mobile_top_links ul {
+          display: flex;
+          gap: 25px;
+          list-style: none;
+        }
+        .mobile_top_links ul li a {
+          font-size: 0.95rem;
+          font-weight: bold;
+          color: var(--primary-medium);
+        }
+      }
+      /* PC 모드(769px 이상)에서는 모바일 전용 탑 링크 레이아웃을 완전히 숨김 */
+      @media (min-width: 769px) {
+        .mobile_top_links {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div id="header_flex_box">
+        <div id="header_container">
+          <!--로고 및 사이트 명 / 홈으로 가는 링크-->
+          <h1>
+            <a href="main.html">
+              <div class="logo">
+                <img src="../images/logo.png" alt="로고" />
+                <div>
+                  <p>급식지킴이</p>
+                  <p>급식 잔반 줄이기</p>
+                </div>
+              </div>
+            </a>
+          </h1>
+          <div id="header_info">
+            <nav class="top_nav">
+              <ul>
+                <li><a href="main.html">홈</a></li>
+                <li><a href="page4.html">사이트맵</a></li>
+                <li><a href="#">로그인</a></li>
+                <li><a href="#">회원가입</a></li>
+              </ul>
+            </nav>
+            <!--검색창-->
+            <form action="" id="search_form">
+              <input type="search" id="search_box" placeholder="검색하기" />
+              <button type="submit" id="submit_btn" aria-label="검색 전송"><i class="fi fi-rr-search"></i></button>
+            </form>
+            <button type="button" id="menu_toggle" aria-label="메뉴 토글"><i class="fi fi-rr-menu-burger"></i></button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <nav id="menu_bar"> <!--모바일 모드가 되면-->
+      <div id="menu_container">
+        <div class="mobile_top_links">
+          <ul>
+            <li><a href="main.html">홈</a></li>
+            <li><a href="page4.html">사이트맵</a></li>
+            <li><a href="#">로그인</a></li>
+            <li><a href="#">회원가입</a></li>
+          </ul>
+        </div>
+
+        <ul id="menu"> <!--메뉴-->
+          <li class="menu_item">
+            <a href="#">
+              <div class="menu_li"><p>잔반문제</p></div>
+            </a>
+            <ul class="submenu">
+              <li>
+                <a href="#"
+                  ><div class="submenu_li"><p>경제 문제</p></div></a
+                >
+              </li>
+              <li>
+                <a href="page1.html"
+                  ><div class="submenu_li"><p>환경 문제</p></div></a
+                >
+              </li>
+            </ul>
+          </li>
+          <li class="menu_item">
+            <a href="#">
+              <div class="menu_li"><p>실천방법</p></div>
+            </a>
+            <ul class="submenu">
+              <li>
+                <a href="page2.html"
+                  ><div class="submenu_li"><p>급식판 인증</p></div></a
+                >
+              </li>
+              <li>
+                <a href="#"
+                  ><div class="submenu_li"><p>잔반 제로 챌린지</p></div></a
+                >
+              </li>
+              <li>
+                <a href="#"
+                  ><div class="submenu_li"><p>스탬프 적립</p></div></a
+                >
+              </li>
+            </ul>
+          </li>
+          <li class="menu_item">
+            <a href="#">
+              <div class="menu_li"><p>잔반퀴즈</p></div>
+            </a>
+            <ul class="submenu">
+              <li>
+                <a href="page3.html"
+                  ><div class="submenu_li"><p>급식 O/X 퀴즈</p></div></a
+                >
+              </li>
+              <li>
+                <a href="#"
+                  ><div class="submenu_li"><p>잔반 처리 퀴즈</p></div></a
+                >
+              </li>
+            </ul>
+          </li>
+          <li class="menu_item">
+            <a href="#">
+              <div class="menu_li"><p>게시판</p></div>
+            </a>
+            <ul class="submenu">
+              <li>
+                <a href="#"
+                  ><div class="submenu_li"><p>공지사항</p></div></a
+                >
+              </li>
+              <li>
+                <a href="#"
+                  ><div class="submenu_li"><p>자유게시판</p></div></a
+                >
+              </li>
+            </ul>
+          </li>
+          <li class="menu_item">
+            <a href="#">
+              <div class="menu_li"><p>소개</p></div>
+            </a>
+            <ul class="submenu last">
+              <li>
+                <a href="#"
+                  ><div class="submenu_li"><p>사이트 소개</p></div></a
+                >
+              </li>
+              <li>
+                <a href="#"
+                  ><div class="submenu_li"><p>이용안내</p></div></a
+                >
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <main>
+      <div id="main_container">
+        <div class="main_info">
+          <p class="main_title">잔반 제로 급식판 인증</p>
+          <p class="main_explanation">
+            잔반 없는 급식판을 인증하여 잔반 제로 챌린지에 참여해보세요
+          </p>
+        </div>
+        <form id="img_input_form">
+          <div id="img_input_box">
+            <label for="img_input" id="input_text"
+              >여기를 클릭하여 사진을 업로드해주세요 <br />
+              (사진을 올리고 다시 클릭해도 작동합니다)
+            </label>
+            <img src="../images/good.png" alt="참잘했어요" id="good" />
+            <input type="file" id="img_input" accept="image/*" required />
+            <img id="preview" src="#" alt="업로드된 사진이 여기에 표시됩니다" />
+          </div>
+        </form>
+        <button type="submit" id="submit">제출하기</button>
+      </div>
+    </main>
+    <!--푸터-->
+    <footer>
+      <div id="footer_container">
+        <p id="footer_info_1">ⓒ 2026. 김도현 / 정서진 All rights reserved.</p>
+        <div id="footer_info_group">
+          <div id="footer_info_2">
+            <a href="#">개인정보처리방침</a>
+            <a href="#">이용약관</a>
+          </div>
+          <div id="footer_info_3">
+            <p>연락처 : 010-1234-5678</p>
+            <p>이메일 : foodsave@gmail.com</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/page2.js"></script>
+  </body>
+</html>

@@ -1,0 +1,681 @@
+/* ============================================================== */
+/* SETTING & RESET
+/* ============================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* 패딩 두께 변동이 전체 레이아웃 크기를 깨뜨리지 않도록 방어 */
+  font-family: 'Pretendard', sans-serif;
+}
+
+body {
+  overflow-x: hidden; /* 모바일 모드 시 우측에 불필요한 유격 가로 스크롤바가 생기는 현상 방지 */
+  background-color: var(--bg-main);
+  color: var(--text-main);
+}
+
+:root {
+  --primary-dark: #1b5e20;
+  --primary-medium: #2e7d32;
+  --primary-main: #4caf50;
+  --primary-light: #e8f5e9;
+
+  --bg-main: #f8fbf8;
+  --bg-card: #ffffff;
+  --text-dark: #222222;
+  --text-main: #333333;
+  --text-muted: #666666;
+
+  --border: #dfdfdf;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* 데스크탑(PC) 기준 모바일 햄버거 토글 스위치 히든 처리 */
+#menu_toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--text-dark);
+}
+
+/* ============================================================== */
+/* HEADER (노트북 화면 잘림 및 검색창 가로축 유출 원천 차단 마감)
+/* ============================================================== */
+#header_flex_box {
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid var(--border);
+  background-color: #fff;
+  width: 100%;
+}
+
+#header_container {
+  width: 100%;
+  max-width: 1200px;
+  height: 75px;
+  padding: 0 30px; /* 좌우 가변 안심 마진 스페이스 공간 스케일링 설정 */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0; /* 화면 압축 시 로고가 찌그러지는 현상 제어 */
+}
+
+.logo img {
+  width: 50px;
+  height: auto;
+}
+
+.logo div p:nth-child(1) {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: var(--primary-dark);
+  white-space: nowrap;
+}
+
+.logo div p:nth-child(2) {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+#header_info {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-shrink: 1; /* 유연하게 반응형 레이아웃 폭 연산 처리 유도 */
+  min-width: 0; /* 내부 요소가 유연하게 줄어들 수 있도록 설정 */
+}
+
+#header_info nav.top_nav ul {
+  display: flex;
+  gap: 15px;
+  list-style: none;
+}
+
+#header_info nav.top_nav ul li a {
+  font-size: 1rem;
+  white-space: nowrap;
+  transition: all 0.25s ease;
+}
+
+#header_info nav.top_nav ul li a:hover {
+  font-weight: bold;
+  color: var(--primary-main);
+}
+
+#search_form {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-shrink: 1; /* 검색창이 화면이 좁아지면 스스로 압축되도록 설정 */
+}
+
+#search_box {
+  width: 180px;
+  max-width: 100%; /* 부모 크기를 벗어나 짤리는 현상 원천 차단 */
+  height: 35px;
+  border-radius: 35px;
+  border: none;
+  background-color: #efefef;
+  padding: 0 40px 0 15px;
+  font-size: 0.9rem;
+  transition: width 0.3s ease;
+}
+
+#submit_btn {
+  position: absolute;
+  right: 0;
+  cursor: pointer;
+  width: 35px;
+  height: 35px;
+  border-radius: 35px;
+  border: none;
+  background-color: var(--primary-medium);
+}
+
+#submit_btn i {
+  color: #ffffff;
+}
+
+/* ============================================================== */
+/* NAV NAVIGATION BAR (데스크탑 상단 호버 드롭다운 구조)
+/* ============================================================== */
+#menu_bar {
+  z-index: 10;
+  background-color: white;
+  width: 100%;
+  border-bottom: 1px solid var(--border);
+  position: relative;
+}
+
+#menu_container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 30px; /* 헤더 좌우 여백 패딩과 정밀 수직 정렬 정합성 매칭 */
+}
+
+#menu {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  width: 100%;
+}
+
+.menu_item {
+  position: relative; /* 자식 서브메뉴 리스트의 절대좌표 수치 바인딩용 중심점 선언 */
+  flex: 1;
+  text-align: center;
+}
+
+.menu_li {
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+.menu_li p {
+  font-size: 1.1rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.menu_item:hover .menu_li p {
+  font-weight: bold;
+  color: var(--primary-dark);
+}
+
+/* 대메뉴 마우스 호버 장식 바 그래픽 모션 효과 기술 적용 */
+.menu_item::after {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 0px;
+  background-color: var(--primary-main);
+  content: '';
+  transition: height 0.25s ease;
+}
+
+.menu_item:hover::after {
+  height: 4px;
+}
+
+/* [서브메뉴 고도화 마감 처리] 유연한 트랜지션을 위한 max-height 기법 설계 */
+.submenu {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  width: 100%;
+  background-color: #ffffff;
+  border: 1px solid var(--border);
+  border-top: none;
+  list-style: none;
+  max-height: 0; /* 평소 숨김 상태 */
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  z-index: 20;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.menu_item:hover .submenu {
+  max-height: 250px; /* 호버 작동 시 부드러운 하단 슬라이딩 오픈 전개 */
+}
+
+.submenu li a {
+  display: block;
+  padding: 12px 0;
+  font-size: 0.95rem;
+  transition: all 0.25s ease;
+}
+
+.submenu li a:hover {
+  background-color: var(--primary-light);
+  font-weight: bold;
+  color: var(--primary-dark);
+}
+
+/* ============================================================== */
+/* MAIN CONTENT
+/* ============================================================== */
+main {
+  width: 100%;
+  padding: 60px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+#main_container {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+/* 메인 대형 슬로건 배너 영역 */
+#main_banner {
+  position: relative;
+  width: 100%;
+  height: 450px;
+  background-color: var(--primary-light);
+  border-radius: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 60px;
+  overflow: hidden;
+}
+
+#banner_text_group {
+  z-index: 2;
+}
+
+.main_banner_title {
+  color: var(--primary-dark);
+  font-size: 2.2rem;
+  font-weight: bold;
+  line-height: 1.4;
+}
+
+.main_banner_p {
+  color: var(--text-muted);
+  margin: 20px 0 40px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.main_banner_btn {
+  display: inline-block;
+  font-size: 1rem;
+  padding: 14px 35px;
+  border-radius: 30px;
+  background-color: var(--primary-main);
+  color: #ffffff;
+  transition: all 0.3s ease;
+}
+
+.main_banner_btn:hover {
+  transform: scale(1.05);
+  font-weight: bold;
+  background-color: var(--primary-medium);
+}
+
+#main_banner_img {
+  width: 300px;
+  height: 300px;
+  background-image: url('../images/earth.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  flex-shrink: 0;
+}
+
+/* 카드 3열 바둑판 그리드 레이아웃 */
+#card {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  border-radius: 30px;
+  padding: 40px 30px;
+  height: 400px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.02);
+  text-align: center;
+}
+
+.card_img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#card_img_1 {
+  background-color: #ebffb8;
+}
+#card_img_2 {
+  background-color: #ffe9b8;
+}
+#card_img_3 {
+  background-color: #b8dfff;
+}
+
+.card_img img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.card_title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--primary-dark);
+}
+
+.card_p {
+  color: var(--text-muted);
+  line-height: 1.5;
+  font-size: 0.95rem;
+}
+
+.card_btn {
+  padding: 10px 25px;
+  border: 3px solid var(--primary-main);
+  border-radius: 20px;
+  font-weight: 500;
+  transition: all 0.25s ease;
+  color: var(--primary-dark);
+}
+
+.card_btn:hover {
+  transform: scale(1.05);
+  background-color: var(--primary-main);
+  color: white;
+  font-weight: bold;
+}
+
+/* 데이터 통계 테이블 영역 */
+#stats_table_section {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 30px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.02);
+}
+
+#stats_table_section h3 {
+  color: var(--primary-dark);
+  margin-bottom: 20px;
+  font-size: 1.3rem;
+}
+
+.table_responsive {
+  width: 100%;
+  overflow-x: auto; /* 미세 모바일 화면 터치 시 표 테이블 깨짐 현상 예방 스크롤 제어 프로퍼티 적용 */
+}
+
+.stats_table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+  min-width: 500px; /* 최소 너비를 지정하여 극단적 모바일 환경에서도 글자 뭉개짐 방지 */
+}
+
+.stats_table thead tr {
+  background-color: var(--primary-light);
+  color: var(--primary-dark);
+}
+
+.stats_table th,
+.stats_table td {
+  padding: 12px;
+  border: 1px solid var(--border);
+}
+
+.stats_table .highlight_text {
+  font-weight: bold;
+  color: var(--primary-main);
+}
+
+/* ============================================================== */
+/* FOOTER (이용약관 밑으로 연락처/이메일 세로 배치 반영)
+/* ============================================================== */
+footer {
+  background-color: #f5f5f5;
+  padding: 30px 20px;
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid var(--border);
+}
+
+#footer_container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+#footer_info_1 {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+}
+
+#footer_info_group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  width: 100%;
+}
+
+#footer_info_2 {
+  display: flex;
+  gap: 20px;
+}
+
+#footer_info_2 a {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  transition: all 0.25s ease;
+}
+
+#footer_info_2 a:hover {
+  color: var(--primary-main);
+  font-weight: bold;
+}
+
+#footer_info_3 {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  display: flex;
+  gap: 20px;
+}
+
+/* ============================================================== */
+/* RESPONSIVE MEDIA QUERIES (완벽한 하이브리드 가변 반응형 설계선)
+/* ============================================================== */
+
+/* ① [노트북 해상도 완벽 디펜스 구간] 1025px ~ 1280px */
+@media (max-width: 1280px) {
+  #header_container,
+  #menu_container {
+    padding: 0 25px;
+  }
+  .logo div p:nth-child(2) {
+    display: none; /* 슬로건 텍스트를 숨겨 네비게이션 침범 현상 사전 차단 */
+  }
+  #search_box {
+    width: 120px; /* 노트북 화면에서 밀려 잘리지 않도록 안전폭 축소 적용 */
+  }
+  #main_banner {
+    padding: 0 40px;
+    height: 400px;
+  }
+  .main_banner_title {
+    font-size: 1.9rem;
+  }
+  #main_banner_img {
+    width: 250px;
+    height: 250px;
+  }
+  #card {
+    gap: 20px;
+  }
+}
+
+/* ② [태블릿 브라우징 구간] 769px ~ 1024px */
+@media (max-width: 1024px) {
+  #main_banner {
+    height: 380px;
+  }
+  .main_banner_title {
+    font-size: 1.7rem;
+  }
+  #main_banner_img {
+    width: 200px;
+    height: 200px;
+  }
+  #card {
+    grid-template-columns: repeat(2, 1fr); /* 카드 배치를 2열로 타이트하게 압축 자동 변환 */
+  }
+}
+
+/* ③ [모바일 디바이스 타겟 최적화 구간] 0px ~ 768px */
+@media (max-width: 768px) {
+  #header_container {
+    height: 70px;
+    padding: 0 20px;
+  }
+  .logo img {
+    width: 42px;
+  }
+  .logo div p:nth-child(1) {
+    font-size: 1.15rem;
+  }
+  #search_form,
+  .top_nav {
+    display: none; /* 협소한 모바일 공간 확보를 위한 상단 탑 컴포넌트 일체 은닉 스위칭 */
+  }
+  #menu_toggle {
+    display: block; /* 숨겨져 있던 햄버거 총괄 드롭버튼 호출 스위치 가시화 */
+  }
+
+  /* 모바일 세로 전개용 네비게이션 드롭다운 슬라이드 레이아웃 재구성 */
+  #menu_bar {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    max-height: 0; /* 자바스크립트 스위칭 핸들러와 결합되어 부드러운 전개를 보장함 */
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+    border-bottom: none;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.05);
+  }
+  #menu_bar.active {
+    max-height: 75vh;
+    border-bottom: 1px solid var(--border);
+    overflow-y: auto;
+  }
+  #menu_container {
+    padding: 0;
+  }
+  #menu {
+    flex-direction: column;
+  }
+  .menu_item {
+    width: 100%;
+    text-align: left;
+    border-bottom: 1px solid #f5f5f5;
+  }
+  .menu_item::after {
+    display: none; /* 하단 호버 하이라이트 데스크탑 전용 바 삭제 */
+  }
+  .menu_li {
+    height: 55px;
+    padding: 0 25px;
+    justify-content: space-between;
+  }
+
+  /* 모바일 아코디언 드롭 레이아웃 속성 */
+  .submenu {
+    position: relative;
+    top: 0;
+    border: none;
+    box-shadow: none;
+    background-color: #fafafa;
+    max-height: 0;
+    transition: max-height 0.3s ease-out;
+  }
+  /* 자바스크립트에 의해 .open 클래스가 들어오면 아코디언 서브 영역 개방 */
+  .menu_item.open .submenu {
+    max-height: 250px;
+  }
+  .submenu li a {
+    padding: 14px 40px;
+    border-bottom: 1px solid #eee;
+  }
+
+  /* 메인 콘텐츠 영역 모바일 수직 1열 재조립 마감 */
+  main {
+    padding: 30px 15px;
+  }
+  #main_container {
+    gap: 35px;
+  }
+  #main_banner {
+    height: auto;
+    flex-direction: column-reverse; /* 모바일 전용 시각 확보를 위해 이미지-텍스트 수직 반전 기법 적용 */
+    padding: 40px 20px;
+    text-align: center;
+    border-radius: 20px;
+  }
+  #banner_text_group {
+    margin-top: 25px;
+  }
+  .main_banner_title {
+    font-size: 1.45rem;
+  }
+  .main_banner_p {
+    font-size: 0.95rem;
+    margin: 12px 0 25px;
+  }
+  .main_banner_btn {
+    width: 100%;
+    max-width: 280px;
+  }
+  #main_banner_img {
+    width: 140px;
+    height: 140px;
+  }
+  #card {
+    grid-template-columns: 1fr; /* 모바일 전용 1열 종대 종방향 변환 연산 */
+    gap: 20px;
+  }
+  .card {
+    height: 350px;
+    padding: 30px 20px;
+  }
+
+  /* 푸터 영역 모바일 최종 정렬 가독성 튜닝 */
+  #footer_container {
+    text-align: center;
+    align-items: center;
+  }
+  #footer_info_group {
+    align-items: center; /* 모바일 화면에서는 깔끔하게 중앙 정렬 */
+    gap: 15px;
+  }
+  #footer_info_2 {
+    justify-content: center;
+  }
+  #footer_info_3 {
+    flex-direction: column; /* 모바일에서는 연락처와 이메일도 수직 배열 */
+    gap: 5px;
+    align-items: center;
+  }
+}

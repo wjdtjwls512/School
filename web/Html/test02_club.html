@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../Css/test01_club.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/4.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css"
+    />
+    <title>바인드 지원</title>
+  </head>
+
+  <body>
+    <h1>TEAM B1ND 신규 부원 모집</h1>
+    <br />
+    <h2><i class="fi fi-rr-cursor"></i>가입 희망 신청서</h2>
+    <hr />
+    <br />
+    <form>
+      <fieldset>
+        <legend>기본 정보</legend>
+        <label for="name">이름</label>
+        <input
+          id="name"
+          type="text"
+          size="20"
+          maxlength="10"
+          autofocus
+          required
+        /><br />
+        <label>학번</label>
+        <input
+          id="name"
+          type="text"
+          size="20"
+          maxlength="10"
+          autofocus
+          required
+        /><br />
+      </fieldset>
+      <fieldset>
+        <legend>지원 정보</legend>
+        <label>희망 전공</label>
+        <label
+          ><input type="checkbox" name="add_option" value="shot" />웹</label
+        >
+        <label
+          ><input type="checkbox" name="add_option" value="shot" />서버</label
+        >
+        <label
+          ><input type="checkbox" name="add_option" value="shot" />iOS</label
+        >
+        <label
+          ><input
+            type="checkbox"
+            name="add_option"
+            value="shot"
+          />안드로이드</label
+        ><br />
+        <label>경험 여부</label>
+        <label><input type="radio" name="HC" value="Hot" />있음</label>
+        <label><input type="radio" name="HC" value="Cold" />없음</label>
+      </fieldset>
+      <fieldset>
+        <legend>지원 동기</legend>
+        <label for="req"></label>
+        <textarea id="req" cols="50" rows="10"></textarea>
+        <button type="submit">제출하기</button>
+      </fieldset>
+    </form>
+  </body>
+</html>

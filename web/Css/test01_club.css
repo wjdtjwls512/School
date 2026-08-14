@@ -1,0 +1,131 @@
+@font-face {
+  font-family: "YeogiOttaeJalnan";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff")
+    format("woff");
+  font-weight: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Aggravo";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroL.woff")
+    format("woff");
+  font-weight: 300;
+  font-display: swap;
+}
+* {
+  margin-bottom: 30px;
+}
+body {
+  background-color: #f9ffff;
+}
+
+h1 {
+  text-align: center;
+  font-size: 60px;
+  height: 90px;
+  background-color: #3674b5;
+  font-family: "YeogiOttaeJalnan";
+  color: #ffffff;
+  margin-top: 10px;
+}
+
+h2 {
+  font-size: 35px;
+  color: #18adbe;
+  margin-left: 5px;
+  font-family: "YeogiOttaeJalnan";
+}
+
+h3 {
+  text-align: center;
+}
+
+p {
+  font-size: 20px;
+  margin-left: 5px;
+  font-family: "Aggravo";
+}
+
+.bind {
+  font-size: 23px;
+  font-weight: bold;
+}
+
+hr {
+  border: 0;
+  height: 3px;
+  background-color: #18adbe;
+}
+
+table {
+  text-align: center;
+  font-size: 20px;
+  border-collapse: collapse;
+  margin-left: 40px;
+  margin-top: 40px;
+  font-family: "Aggravo";
+}
+
+table,
+th,
+td {
+  border: 1px solid black;
+}
+
+th,
+td {
+  width: 700px;
+  height: 30px;
+}
+
+th {
+  background-color: #a3edf5;
+}
+
+td {
+  background-color: #f2fbff;
+}
+
+li {
+  font-size: 20px;
+  margin-top: 15px;
+  font-family: "Aggravo";
+}
+
+fieldset {
+  width: 1400px;
+  line-height: 2;
+  margin-bottom: 20px;
+}
+
+form {
+  margin-left: 30px;
+}
+
+legend {
+  font-size: 20px;
+  font-weight: bold;
+  font-family: "Aggravo";
+}
+
+textarea {
+  vertical-align: top;
+  resize: none;
+}
+
+button {
+  width: 150px;
+  height: 50px;
+  margin-left: 30px;
+  font-size: 20px;
+  background-color: #83dfe9;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+label {
+  font-size: 18px;
+  font-family: "Aggravo";
+}

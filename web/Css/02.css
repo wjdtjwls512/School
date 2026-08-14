@@ -1,0 +1,64 @@
+/* 🍿 1. 전체 배경 스타일 (영화가 돋보이도록 어둡게) */
+body {
+  background-color: #0f0f14;
+  color: #ffffff;
+  font-family: "Noto Sans KR", sans-serif;
+  margin: 0;
+  padding: 20px;
+}
+
+/* 🎬 2. 영화 카드들을 정렬하는 큰 방 (그리드 레이아웃) */
+#movie-container {
+  display: grid;
+  /* 화면 크기에 맞춰 카드가 알아서 꽉 채워지도록 설정 (최소 폭 220px) */
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 30px; /* 카드와 카드 사이의 간격 */
+  padding: 20px;
+  max-width: 1400px;
+  margin: 0 auto; /* 화면 가운데 정렬 */
+}
+
+/* 🎴 3. 영화 카드 낱개 스타일 */
+.movie-card {
+  background-color: #1a1a24;
+  border-radius: 16px; /* 모서리를 부드럽고 둥글게 */
+  overflow: hidden; /* 이미지가 튀어나오지 않게 깎아냄 */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* 고급스러운 깊은 그림자 */
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); /* 마우스 올렸을 때 쫀득한 움직임 효과 */
+}
+
+/* 🎯 4. 카드에 마우스 올렸을 때 효과 (Hyper-real 효과) */
+.movie-card:hover {
+  transform: translateY(-10px); /* 위로 슥 띄우기 */
+  box-shadow: 0 15px 30px rgba(229, 9, 20, 0.4); /* 넷플릭스 시그니처 레드 빛 효과 */
+  border: 1px solid rgba(229, 9, 20, 0.5);
+}
+
+/* 🖼️ 5. 영화 포스터 이미지 스타일 */
+.movie-card img {
+  width: 100%;
+  height: 330px;
+  object-fit: cover; /* 이미지 비율이 깨지지 않게 꽉 채움 */
+  border-bottom: 2px solid #252533;
+}
+
+/* 📝 6. 카드 내부 텍스트 레이아웃 */
+.movie-card .movie-info {
+  padding: 15px;
+}
+
+.movie-card h3 {
+  font-size: 16px;
+  margin: 0 0 8px 0;
+  /* 제목이 너무 길면 자르고 ...으로 표시하는 치트키 */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.movie-card .rating {
+  font-size: 14px;
+  color: #ffc107; /* 평점 별 모양 황금색 */
+  font-weight: bold;
+}

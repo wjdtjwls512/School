@@ -1,0 +1,232 @@
+@font-face {
+  font-family: "OneStoreMobilePop";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/ONE-Mobile-POP.woff")
+    format("woff");
+  font-weight: normal;
+  font-display: swap;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+header {
+  width: 100%;
+}
+
+h1 {
+  font-family: "OneStoreMobilePop";
+  /* padding: 10px; */
+  box-sizing: border-box;
+}
+
+#sear {
+  width: 150px;
+  height: 30px;
+  background-origin: 1px solid rgb(177, 175, 175);
+  border-radius: 20px;
+}
+
+.logo {
+  width: 40px;
+}
+
+nav > ul {
+  list-style: none;
+  text-align: center;
+  border-top: 1px solid gray;
+  border-bottom: 1px solid gray;
+}
+
+nav ul li {
+  display: inline-block;
+  width: 200px;
+  height: 50px;
+  font-weight: 600;
+  font-size: 18px;
+  text-align: center;
+  line-height: 50px;
+}
+
+#main_img {
+  width: 100%;
+  height: 600px;
+  background-image: url("../images/bg01.jpg");
+  background-size: cover;
+  position: relative;
+}
+
+#main_title {
+  font-size: 50px;
+  position: absolute;
+  bottom: 50px;
+  /* right: 100px; */
+  left: 50px;
+  /* top: 200px; */
+  color: rgb(255, 255, 255, 0.8);
+  font-weight: bold;
+}
+
+nav > ul > li {
+  position: relative;
+}
+
+.submenu {
+  position: absolute;
+  z-index: 1;
+  background-color: white;
+  border: 1px solid gray;
+  display: none;
+}
+
+nav > ul > li:hover .submenu {
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  display: block;
+}
+
+nav ul li:hover {
+  background-color: #f2f2f2;
+}
+
+footer {
+  width: 100%;
+  height: 250px;
+  background-color: rgb(61, 78, 57);
+  color: white;
+  padding: 20px;
+  line-height: 1.8;
+}
+
+.footer_logo {
+  font-size: 30px;
+  font-family: "OneStoreMobilePop";
+  margin-bottom: 20px;
+}
+
+.footer_info {
+  font-size: 20px;
+}
+
+.policy {
+  background-color: white;
+  color: rgb(61, 78, 57);
+}
+
+#info {
+  text-align: center;
+  text-shadow: 2px 2px 2px black;
+}
+
+.card {
+  display: inline-block;
+  width: 350px;
+  height: 400px;
+  margin: 20px;
+  padding: 40px 10px;
+  color: white;
+  line-height: 2;
+  vertical-align: top;
+}
+
+#exhibit {
+  background-image: url("../images/bg02.jpg");
+  background-size: cover;
+}
+
+#experience {
+  background-image: url("../images/bg03.jpg");
+  background-size: cover;
+}
+
+#shop {
+  background-image: url("../images/bg04.jpg");
+  background-size: cover;
+}
+
+.card p {
+  font-size: 20px;
+}
+
+.card_title {
+  font-size: 40px !important;
+  font-weight: bold;
+}
+
+.card button {
+  width: 100px;
+  height: 40px;
+  font-size: 20px;
+  background-color: rgb(255, 255, 255, 0.5);
+  border-radius: 20px;
+  margin: 20px;
+  color: white;
+  font-weight: bold;
+  border-style: none;
+  cursor: pointer;
+}
+
+.card:hover {
+  filter: saturate(200%);
+}
+
+@media screen and (max-width: 1024px) {
+  nav ul li {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .submenu {
+    position: static;
+  }
+
+  nav > ul > li:hover .submenu {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #head p {
+    display: none;
+  }
+}
+
+#head {
+  display: flex;
+  justify-content: flex-end;
+  /* width: 1100px; */
+  height: 80px;
+  line-height: 80px;
+  font-size: 18px;
+  gap: 10px;
+}
+
+/* .h_box {
+  flex-basis: 300px;
+} */
+
+#h_box1 {
+  /* flex-grow: 1; */
+  /* flex-shrink: 1; */
+  margin-right: auto;
+}
+
+/* #h_box2 {
+  flex-grow: 1;
+  flex-shrink: 0;
+}
+
+#h_box3 {
+  flex-shrink: 1;
+}
+
+#h_box4 {
+  flex-grow: 2;
+  flex-shrink: 2;
+} */
