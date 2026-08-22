@@ -13,11 +13,11 @@ public class IfEx2 {
             System.out.println("초등학생입니다.");
         } else if (age < 20) {
             charge = 2500;
-            System.out.println("중,고등학생입니다.");
+            System.out.println("중, 고등학생입니다.");
         } else {
             charge = 3000;
             System.out.println("일반인입니다.");
         }
-        System.out.println("입장료는 " + charge + "원입니다.");
+        System.out.println("입장료는 "+ charge + "원입니다.");
     }
 }
