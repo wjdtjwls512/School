@@ -7,7 +7,8 @@ public class ArrayEx4 {
         for (int i = 0; i < arr.length; i++) {
             total += arr[i];
         }
-        double avg = total / arr.length;
-        System.out.printf("점수의 합: " + total + "\n점수의 평균: " + avg);
+        double avg = (double)total / arr.length;
+        System.out.println("점수의 합: " + total);
+        System.out.printf("점수의 평균: %.1f%n", avg);
     }
 }
