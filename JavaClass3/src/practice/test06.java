@@ -7,7 +7,7 @@ public class test06 {
         System.out.print("홀수 번째 요소: ");
         for (int i = 0; i < numbers.length; i++) {
             if (i % 2 == 0) {
-                total += i;
+                total += numbers[i];
                 System.out.print(numbers[i] + " ");
             }
         }

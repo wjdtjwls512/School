@@ -13,7 +13,7 @@ public class test02 {
                 System.out.println("등급: B");
                 break;
             case 7:
-                System.out.println("등급: c");
+                System.out.println("등급: C");
                 break;
             default:
                 System.out.println("등급: D");
