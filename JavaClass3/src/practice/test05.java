@@ -11,6 +11,7 @@ public class test05 {
                 numbers[i] = (i + 2) * 3;
             }
         }
+        System.out.print("numbers 배열에 저징된 값: ");
         for (int i = 0; i < numbers.length; i++) {
             System.out.print(numbers[i] + " ");
         }
