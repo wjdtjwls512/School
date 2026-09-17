@@ -7,11 +7,7 @@ public class test15 {
         int n = decode.length - 1;
 
         for (int i = 0; i < decode.length; i++) {
-            newDecode[i] = decode[n--];
-        }
-
-        for (int i = 0; i < newDecode.length; i++) {
-            System.out.print(newDecode[i]);
+            System.out.print(newDecode[i] = decode[n--]);
         }
     }
 }
