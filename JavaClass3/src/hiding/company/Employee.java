@@ -1,7 +1,7 @@
 package hiding.company;
 
 public class Employee {
-    public String name = "철수";
+    public String name = "지민";
     protected String department = "개발팀";
     String email = "soo@company.com";
     private int salary = 5000000;
