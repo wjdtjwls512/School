@@ -17,19 +17,22 @@ public class Student {
         return grade;
     }
 
-    public void setId(int id) {
+    public Student setId(int id) {
         this.id = id;
+        return this;
     }
 
-    public void setName(String name) {
+    public Student setName(String name) {
         this.name = name;
+        return this;
     }
 
-    public void setGrade(int grade) {
+    public Student setGrade(int grade) {
         this.grade = grade;
+        return this;
     }
 
     public void showStudentInfo() {
-        System.out.println("학번: " + id + "이름: " + name + "학년: " + grade);;
+        System.out.println("학번: " + id + " 이름: " + name + " 학년: " + grade);
     }
 }
