@@ -52,7 +52,7 @@ public class Student {
     }
 
     public static void main(String[] args) {
-        Student student = new Builder(1301, "이정연", 1).major("풀스택").phoneNumber("010-1234-5678").build();
+        Student student = new Student.Builder(1301, "이정연", 1).major("풀스택").phoneNumber("010-1234-5678").build();
         student.showInfo();
     }
 }
