@@ -33,5 +33,6 @@ public class ArrayListTest {
         for (Book book : booklist) {
             book.showBookInfo();
         }
+        System.out.println(booklist.isEmpty());
     }
 }
