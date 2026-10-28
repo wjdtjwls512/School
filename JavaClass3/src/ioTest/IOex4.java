@@ -12,7 +12,7 @@ public class IOex4 {
             for (int j = 0; j < n - i; j++) {
                 System.out.print(" ");
             }
-            for (int j = 0; j < i + i + 15; j++) {
+            for (int j = 0; j < i + i + 1; j++) {
                 System.out.print("*");
             }
             System.out.println();

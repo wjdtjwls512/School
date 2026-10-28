@@ -1,7 +1,7 @@
 package ioTest;
 
 public class Car {
-    private static int carCount;
+    private static int carCount = 0;
 
     private String model;
     private String color;
@@ -13,22 +13,10 @@ public class Car {
         this.price = price;
     }
 
-//    public void setModel(String model) {
-//        this.model = model;
-//    }
-//
-//    public void setColor(String color) {
-//        this.color = color;
-//    }
-//
-//    public void setPrice(long price) {
-//        this.price = price;
-//    }
-
     public void showCar() {
-            System.out.println("보유 차량 " + carCount++);
-            System.out.println("Model: " + model);
-            System.out.println("Color: " + color);
-            System.out.println("Price: " + price);
+        System.out.println("보유 차량 " + carCount++);
+        System.out.println("Model: " + model);
+        System.out.println("Color: " + color);
+        System.out.println("Price: " + price);
     }
 }
