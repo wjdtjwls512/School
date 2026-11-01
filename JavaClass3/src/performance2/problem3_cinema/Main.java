@@ -1,4 +1,4 @@
-package testPractice.performance2.cinema;
+package performance2.problem3_cinema;
 
 import java.util.Scanner;
 
@@ -18,11 +18,13 @@ class Customer {
     // 생성자: 관람객 이름을 저장하고 예약 좌석 수를 0으로 초기화한다.
     public Customer(String name) {
         this.name = name;
+        // 아직 예약을 하지 않았으므로 시작 예약 좌석 수는 0이다.
         this.reservedSeats = 0;
     }
 
     // 예약이 성공한 좌석 수를 관람객의 예약 누계에 더한다.
     public void addReservation(int count) {
+        // Cinema에서 예약 가능 여부를 확인한 뒤에만 호출되므로 예약 수를 누적한다.
         reservedSeats += count;
     }
 
@@ -49,10 +51,13 @@ class Cinema {
     public void reserve(Customer customer, int count) {
         // 먼저 조건을 확인해 허용되는 경우와 처리할 수 없는 경우를 나눈다.
         if (count <= 0) {
+            // 0석이나 음수 좌석은 예약 수량으로 인정하지 않는다.
             System.out.println("올바른 좌석 수를 입력하세요.");
         } else if (count > availableSeats) {
+            // 남은 좌석보다 많이 요청하면 두 객체의 좌석 정보를 바꾸지 않는다.
             System.out.println("예약 가능한 좌석이 부족합니다.");
         } else {
+            // 예약 성공: 영화관의 빈 좌석을 줄이고, 관람객 예약 수를 같은 만큼 늘린다.
             availableSeats -= count;
             customer.addReservation(count);
         }
@@ -74,9 +79,11 @@ public class Main {
         Customer hong = new Customer("홍길동");
         Customer kim = new Customer("김철수");
 
+        // 첫 번째 예약 수는 홍길동, 두 번째 예약 수는 김철수의 요청이다.
         int hongSeats = sc.nextInt();
         int kimSeats = sc.nextInt();
 
+        // 순서대로 예약하므로 홍길동이 먼저 좌석을 확보하고 김철수는 그 뒤 남은 좌석을 사용한다.
         cinema.reserve(hong, hongSeats);
         cinema.reserve(kim, kimSeats);
 

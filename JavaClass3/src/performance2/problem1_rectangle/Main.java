@@ -1,4 +1,4 @@
-package testPractice.performance2.rectangle;
+package performance2.problem1_rectangle;
 
 import java.util.Scanner;
 
@@ -23,12 +23,14 @@ class Rectangle {
 
     // 가로와 세로를 곱한 직사각형 넓이를 반환한다.
     public int getArea() {
+        // 넓이는 가로와 세로를 곱해서 계산한다.
         return width * height;
     }
 
     // 문제지에 적힌 메서드 이름(getRerimeter)을 그대로 사용했다.
     // 가로 두 개와 세로 두 개의 합인 직사각형 둘레를 반환한다.
     public int getRerimeter() {
+        // 마주 보는 변이 각각 두 개씩 있으므로 (가로 + 세로)에 2를 곱한다.
         return (width + height) * 2;
     }
 
@@ -46,9 +48,11 @@ public class Main {
     // 프로그램이 시작되는 지점이다. 입력, 객체 생성, 메서드 호출 순으로 진행한다.
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        // 첫 번째 정수를 가로, 두 번째 정수를 세로로 입력받는다.
         int width = sc.nextInt();
         int height = sc.nextInt();
 
+        // 입력한 두 값을 생성자에 전달해 직사각형 객체 하나를 만든다.
         Rectangle rectangle = new Rectangle(width, height);
         rectangle.showInfo();
     }

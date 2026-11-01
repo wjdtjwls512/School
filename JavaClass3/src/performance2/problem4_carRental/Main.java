@@ -1,4 +1,4 @@
-package testPractice.performance2.carRental;
+package performance2.problem4_carRental;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -11,7 +11,7 @@ import java.util.Scanner;
  */
 // 차량의 관리 정보와 대여 상태를 보관하고 대여 금액을 계산한다.
 class Car {
-    // 차량 관리 번호 또는 주문 수량을 저장한다.
+    // 이 차량을 구별하는 관리 번호를 저장한다. 첫 차량은 101번이다.
     private int num;
     // 차량 번호판 문자열을 저장한다.
     private String carNumber;
@@ -26,17 +26,23 @@ class Car {
 
     // 생성자: 관리번호를 자동 발급하고 차량 정보 및 미대여 상태를 저장한다.
     public Car(String carNumber, String carType, int dailyPrice) {
+        // 현재 serialNum을 이 차량의 관리 번호로 사용한다.
         this.num = serialNum;
+        // 다음 차량이 만들어지면 다음 번호를 받도록 공용 번호를 1 증가시킨다.
         serialNum++;
+        // 생성자에 전달된 차량번호, 차종, 하루 요금을 각각 필드에 저장한다.
         this.carNumber = carNumber;
         this.carType = carType;
         this.dailyPrice = dailyPrice;
+        // 새로 등록된 차량은 아직 빌려간 사람이 없으므로 false로 시작한다.
         this.rented = false;
     }
 
     // 하루 요금에 대여 일수를 곱해 총액을 반환하고 대여 상태를 표시한다.
     public int rent(int days) {
+        // rent()가 호출되면 이 차량을 대여한 것으로 표시한다.
         rented = true;
+        // 총 요금은 하루 요금에 대여 일수를 곱한 값이다.
         return dailyPrice * days;
     }
 
@@ -57,21 +63,24 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         ArrayList<Car> cars = new ArrayList<>();
 
+        // 문제에서 지정한 차량 세 대를 순서대로 목록에 등록한다.
         cars.add(new Car("234하5678", "teslar", 100000));
         cars.add(new Car("555허2158", "sonata", 70000));
         cars.add(new Car("123호4567", "genesis", 90000));
 
         System.out.println("대여 차량(1.teslar, 2.sonata, 3.genesis)과 대여 일수를 입력하세요.");
+        // 첫 번째 입력은 차량 선택 번호(1~3), 두 번째 입력은 대여 일수다.
         int carChoice = sc.nextInt();
         int days = sc.nextInt();
-        int totalPrice = 0;
+        int totalPrice = 0; // 선택한 차량의 대여 비용을 나중에 저장한다.
 
         // 먼저 조건을 확인해 허용되는 경우와 처리할 수 없는 경우를 나눈다.
         if (carChoice < 1 || carChoice > 3) {
             System.out.println("잘못된 입력입니다");
         } else {
+            // 사용자 번호는 1부터 시작하고 목록 위치는 0부터 시작하므로 1을 뺀다.
             Car selectedCar = cars.get(carChoice - 1);
-            totalPrice = selectedCar.rent(days);
+            // 선택한 차량의 rent()가 계산한 총액을 저장한다.
             selectedCar.showInfo();
             System.out.println("총 대여 금액: " + totalPrice + "원");
         }

@@ -1,4 +1,4 @@
-package testPractice.performance2.vendingMachine;
+package performance2.problem2_vendingMachine;
 
 import java.util.Scanner;
 
@@ -19,6 +19,7 @@ class VendingMachine {
 
     // 생성자: 음료 이름·가격·초기 재고를 받아 자판기 상품을 준비한다.
     public VendingMachine(String name, int price, int stock) {
+        // 생성자에서 받은 값을 각 필드에 저장해 음료 정보를 초기화한다.
         this.name = name;
         this.price = price;
         this.stock = stock;
@@ -27,7 +28,9 @@ class VendingMachine {
     // 구매 수량이 양수이고 재고 이하일 때만 재고를 차감한다.
     public void sell(int count) {
         // 먼저 조건을 확인해 허용되는 경우와 처리할 수 없는 경우를 나눈다.
+        // 두 조건을 모두 만족해야 판매한다: 0보다 큰 수량이며 현재 재고 이하여야 한다.
         if (count > 0 && count <= stock) {
+            // 판매한 개수만큼 재고를 줄인다.
             stock -= count;
         } else {
             System.out.println("음료를 판매할 수 없습니다.");
@@ -47,8 +50,10 @@ public class Main {
     // 프로그램이 시작되는 지점이다. 입력, 객체 생성, 메서드 호출 순으로 진행한다.
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        // 문제에 지정된 콜라 자판기: 한 개 1500원, 처음 재고 10개.
         VendingMachine machine = new VendingMachine("콜라", 1500, 10);
 
+        // 구매할 음료 수량을 입력받아 자판기의 판매 메서드에 전달한다.
         int count = sc.nextInt();
         machine.sell(count);
         machine.showInfo();
