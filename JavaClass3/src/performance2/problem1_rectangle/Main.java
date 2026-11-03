@@ -53,7 +53,7 @@ public class Main {
         int height = sc.nextInt();
 
         // 입력한 두 값을 생성자에 전달해 직사각형 객체 하나를 만든다.
-        Rectangle rectangle = new Rectangle(width, height);
-        rectangle.showInfo();
+        Rectangle r = new Rectangle(width, height);
+        r.showInfo();
     }
 }

@@ -39,6 +39,7 @@ class VendingMachine {
 
     // 객체가 가진 정보를 사용자가 읽을 수 있도록 출력한다.
     public void showInfo() {
+        System.out.println("==판매 후==");
         System.out.println("음료 이름: " + name);
         System.out.println("가격: " + price + "원");
         System.out.println("남은 재고: " + stock + "개");
@@ -51,11 +52,11 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         // 문제에 지정된 콜라 자판기: 한 개 1500원, 처음 재고 10개.
-        VendingMachine machine = new VendingMachine("콜라", 1500, 10);
+        VendingMachine vm = new VendingMachine("콜라", 1500, 10);
 
         // 구매할 음료 수량을 입력받아 자판기의 판매 메서드에 전달한다.
-        int count = sc.nextInt();
-        machine.sell(count);
-        machine.showInfo();
+        int n = sc.nextInt();
+        vm.sell(n);
+        vm.showInfo();
     }
 }

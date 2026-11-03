@@ -30,7 +30,7 @@ class Customer {
 
     // 객체가 가진 정보를 사용자가 읽을 수 있도록 출력한다.
     public void showInfo() {
-        System.out.println("이름: " + name + ", 예약 좌석 수: " + reservedSeats);
+        System.out.println(name + ": " + reservedSeats + "석");
     }
 }
 
@@ -66,7 +66,7 @@ class Cinema {
     // 객체가 가진 정보를 사용자가 읽을 수 있도록 출력한다.
     public void showInfo() {
         System.out.println("영화 제목: " + title);
-        System.out.println("남은 좌석 수: " + availableSeats);
+        System.out.println("남은 좌석: " + availableSeats + "석");
     }
 }
 
@@ -75,20 +75,21 @@ public class Main {
     // 프로그램이 시작되는 지점이다. 입력, 객체 생성, 메서드 호출 순으로 진행한다.
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        Cinema cinema = new Cinema("어벤져스", 10);
-        Customer hong = new Customer("홍길동");
-        Customer kim = new Customer("김철수");
+        Cinema c = new Cinema("어벤져스", 10);
+        Customer c1 = new Customer("홍길동");
+        Customer c2 = new Customer("김철수");
 
         // 첫 번째 예약 수는 홍길동, 두 번째 예약 수는 김철수의 요청이다.
-        int hongSeats = sc.nextInt();
-        int kimSeats = sc.nextInt();
+        int n1 = sc.nextInt();
+        int n2 = sc.nextInt();
 
         // 순서대로 예약하므로 홍길동이 먼저 좌석을 확보하고 김철수는 그 뒤 남은 좌석을 사용한다.
-        cinema.reserve(hong, hongSeats);
-        cinema.reserve(kim, kimSeats);
+        c.reserve(c1, n1);
+        c.reserve(c2, n2);
 
-        hong.showInfo();
-        kim.showInfo();
-        cinema.showInfo();
+        System.out.println("==예약 결과==");
+        c1.showInfo();
+        c2.showInfo();
+        c.showInfo();
     }
 }

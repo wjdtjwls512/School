@@ -47,9 +47,10 @@ class Notebook {
 
     // 객체가 가진 정보를 사용자가 읽을 수 있도록 출력한다.
     public void showInfo() {
-        System.out.println("전체 노트북 수: " + totalCount);
-        System.out.println("대여 중인 노트북 수: " + rentalCount);
-        System.out.println("남은 노트북 수: " + (totalCount - rentalCount));
+        System.out.println("==노트북 대여 현황==");
+        System.out.println("전체 노트북: " + totalCount + "대");
+        System.out.println("대여 중: " + rentalCount + "대");
+        System.out.println("남은 노트북: " + (totalCount - rentalCount) + "대");
     }
 }
 
@@ -95,14 +96,14 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         // 싱글톤에서 유일한 관리자 객체를 받아 이후 모든 작업에 사용한다.
-        NotebookManager manager = NotebookManager.getInstance();
+        NotebookManager m = NotebookManager.getInstance();
 
         // 입력 순서는 대여할 수량, 반납할 수량이다.
-        int rentCount = sc.nextInt();
-        int returnCount = sc.nextInt();
+        int rent = sc.nextInt();
+        int back = sc.nextInt();
 
-        manager.rentNotebook(rentCount);
-        manager.returnNotebook(returnCount);
-        manager.showInfo();
+        m.rentNotebook(rent);
+        m.returnNotebook(back);
+        m.showInfo();
     }
 }

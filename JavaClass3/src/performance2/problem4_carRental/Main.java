@@ -51,7 +51,7 @@ class Car {
         System.out.println("관리번호: " + num);
         System.out.println("차량번호: " + carNumber);
         System.out.println("차종: " + carType);
-        System.out.println("1일 대여 요금: " + dailyPrice + "원");
+        System.out.println("1일 대여 요금: " + dailyPrice);
         System.out.println("대여 여부: " + rented);
     }
 }
@@ -68,21 +68,27 @@ public class Main {
         cars.add(new Car("555허2158", "sonata", 70000));
         cars.add(new Car("123호4567", "genesis", 90000));
 
-        System.out.println("대여 차량(1.teslar, 2.sonata, 3.genesis)과 대여 일수를 입력하세요.");
+        System.out.println("대여 차량(1.teslar, 2.sonata, 3.genesis)와 대여일수를 입력하세요.");
         // 첫 번째 입력은 차량 선택 번호(1~3), 두 번째 입력은 대여 일수다.
-        int carChoice = sc.nextInt();
+        int choice = sc.nextInt();
         int days = sc.nextInt();
-        int totalPrice = 0; // 선택한 차량의 대여 비용을 나중에 저장한다.
+        int total = 0; // 선택한 차량의 대여 비용을 나중에 저장한다.
 
         // 먼저 조건을 확인해 허용되는 경우와 처리할 수 없는 경우를 나눈다.
-        if (carChoice < 1 || carChoice > 3) {
+        if (choice < 1 || choice > 3) {
             System.out.println("잘못된 입력입니다");
         } else {
             // 사용자 번호는 1부터 시작하고 목록 위치는 0부터 시작하므로 1을 뺀다.
-            Car selectedCar = cars.get(carChoice - 1);
-            // 선택한 차량의 rent()가 계산한 총액을 저장한다.
-            selectedCar.showInfo();
-            System.out.println("총 대여 금액: " + totalPrice + "원");
+            Car car = cars.get(choice - 1);
+            // rent()를 호출해 대여 상태를 바꾸고 총 대여 금액을 계산한다.
+            total = car.rent(days);
         }
+
+        // 선택 여부와 관계없이 세 차량의 현재 정보를 모두 출력한다.
+        for (Car car : cars) {
+            car.showInfo();
+            System.out.println();
+        }
+        System.out.println("총 대여금액: " + total);
     }
 }
