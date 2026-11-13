@@ -20,7 +20,7 @@ public class CustomerTest {
         customerHa.bonusPoint = 20000;
 
 //        System.out.println(customerHa.showCustomerInfo());
-        System.out.println(customerHa.showVIPInfo());
+        System.out.println(customerHa.showCustomerInfo());
     }
 
 }
