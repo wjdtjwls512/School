@@ -3,7 +3,7 @@ package polymorphism.Customer;
 public class Customer {
     protected int customerID;       // 고객 아이디
     protected String customerName;  // 고객 이름
-    protected String customerGrade; // 고객 등금
+    protected String customerGrade; // 고객 등급
     int bonusPoint;               // 보너스 포인트
     double bonusRatio;            // 보너스 포인트 적립비율
 
