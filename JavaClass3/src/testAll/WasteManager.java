@@ -23,15 +23,22 @@ public class WasteManager {
         {
             for(Food f : foods)
             {
-                System.out.println(f.getName());
-                System.out.println(f.getServedGrams());
                 total_gram += f.getServedGrams();
-                System.out.println(f.getWasteGrams());
                 total_waste_gram += f.getWasteGrams();
-                System.out.println(f.getWasteRate());
-                System.out.println(f.getAdvice());
             }
-            System.out.println((total_gram / total_waste_gram) * 100);
+
+            System.out.println("전체 배식량: "+total_gram+"g");
+            System.out.println("전체 잔반량: "+total_waste_gram+"g");
+            System.out.printf("전체 잔반율: %.1f%%\n",(total_waste_gram / total_gram) * 100);
+
+            if(((total_waste_gram / total_gram) * 100) >= TARGET_RATE)
+            {
+                System.out.println("잔반을 줄이기 위한 개선이 필요합니다.");
+            }
+            else
+            {
+                System.out.println("목표 잔반율을 달성했습니다.");
+            }
         }
     }
 
