@@ -1,5 +1,8 @@
 package polymorphism.Customer;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+
 public class CustomerTest2 {
     public static void main(String[] args) {
         Customer[] customerList = new Customer[5];
