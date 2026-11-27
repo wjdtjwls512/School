@@ -98,7 +98,7 @@ public class Main {
                 name = sc.nextLine();
                 System.out.println("원하는 초봉을 입력해주세요 | 천만단위");
                 salary = sc.nextInt();
-                System.out.println("보우역량 수준을 입력해주세요 | 1~5");
+                System.out.println("보유역량 수준을 입력해주세요 | 1~5");
                 skill = sc.nextInt();
                 System.out.println("요구복지 수준을 입력해주세요 | 1~5");
                 benefit = sc.nextInt();
